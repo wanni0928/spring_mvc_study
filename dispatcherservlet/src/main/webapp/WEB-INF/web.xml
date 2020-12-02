@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--
+    org.springframework.web.context.ContextLoader
+    config param public static final String CONTEXT_CLASS_PARAM = "contextClass";
+    -->
+<!--    <listener>-->
+<!--        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+<!--    </listener>-->
+
+<!--    <context-param>-->
+<!--        <param-name>contextClass</param-name>-->
+<!--        <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>-->
+<!--    </context-param>-->
+
+<!--    <context-param>-->
+<!--        <param-name>contextConfigLocation</param-name>-->
+<!--        <param-value>com.wannistudio.dispatcherservlet.AppConfig</param-value>-->
+<!--    </context-param>-->
+
+    <servlet>
+        <servlet-name>app</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextClass</param-name>
+            <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+        </init-param>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>com.wannistudio.dispatcherservlet.WebConfig</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>app</servlet-name>
+        <url-pattern>/app/*</url-pattern>
+    </servlet-mapping>
+
+    <!--    <filter>-->
+<!--        <filter-name>myFilter</filter-name>-->
+<!--        <filter-class>com.wannistudio.dispatcherservlet.MyFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>myFilter</filter-name>-->
+<!--        <servlet-name>hello</servlet-name>-->
+<!--    </filter-mapping>-->
+<!--    -->
+<!--    <listener>-->
+<!--        <listener-class>com.wannistudio.dispatcherservlet.MyListener</listener-class>-->
+<!--    </listener>-->
+
+<!--    Spring Ioc(ApplicationContext)를 Servlet Container의 생명주기에 맞게 적용 시켜준다 -->
+
+
+<!--    <servlet>-->
+<!--        <servlet-name>hello</servlet-name>-->
+<!--        <servlet-class>com.wannistudio.dispatcherservlet.HelloServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>hello</servlet-name>-->
+<!--        <url-pattern>/hello</url-pattern>-->
+<!--    </servlet-mapping>-->
+</web-app>
