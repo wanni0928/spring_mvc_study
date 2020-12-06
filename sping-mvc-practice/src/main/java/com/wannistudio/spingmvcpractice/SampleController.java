@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
+//@Controller
 public class SampleController {
 
 //    @RequestMapping(value = "/hello", method = {RequestMethod.GET, RequestMethod.PUT}) // 특정 메소드를 에노테이션으로 정의하지 않으면 모든 http 요청을 허용하게 된다.
