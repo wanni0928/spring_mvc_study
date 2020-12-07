@@ -2,10 +2,12 @@ package com.wannistudio.spingmvcpractice;
 
 import org.h2.engine.Session;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -21,6 +23,7 @@ import java.util.Map;
 @SessionAttributes("event")
 //@RestController
 public class PracticeController {
+
 //
 //    @GetMapping("/events")
 //    public String events() {
@@ -100,8 +103,9 @@ public class PracticeController {
     @GetMapping("/events/form/name")
     public String eventsFormName(Model model) {
 //        Event event = new Event(1, "와니", 20);
-        model.addAttribute("event", new Event()); // @SessionAttributes 에 "event"가 등록되어 있어서 자동으로 세션에 저장된다.
-        return "events/form-name";
+        throw new EventException();
+//        model.addAttribute("event", new Event()); // @SessionAttributes 에 "event"가 등록되어 있어서 자동으로 세션에 저장된다.
+//        return "events/form-name";
     }
     @PostMapping("/events/form/name")
     public String eventsFormNameSubmit(@Validated @ModelAttribute Event event,
